@@ -1,6 +1,11 @@
 function App() {
-  // eslint-disable-next-line react/react-in-jsx-scope
-  return <div>Hello World!</div>;
+  return (
+    <form>
+      <input id="din_name" name="din_name" placeholder="Enter your text..." />
+      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+      <label htmlFor="din_name">asdad</label>
+    </form>
+  );
 }
 
 export default App;
