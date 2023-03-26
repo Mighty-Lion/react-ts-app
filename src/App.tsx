@@ -1,11 +1,22 @@
-function App() {
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+
+export function App() {
   return (
-    <form>
-      <input id="din_name" name="din_name" placeholder="Enter your text..." />
-      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-      <label htmlFor="din_name">asdad</label>
-    </form>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
-export default App;
+export function WrappedApp() {
+  return (
+    <Router>
+      <div>
+        <App />
+      </div>
+    </Router>
+  );
+}
